@@ -1,0 +1,59 @@
+<ion-side-menus>
+  <!-- 中间内容 -->
+  <ion-side-menu-content>
+    <ion-header-bar align-title="center" no-tap-scroll="false">
+      <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+      <div class="title">hello word</div>
+      <!--<button menu-toggle="right" class="button button-icon icon ion-navicon"></button>-->
+    </ion-header-bar>
+    <ion-content>
+      <!--中间内容-->
+      <ui-view name=""></ui-view>
+    </ion-content>
+    <!--下方按钮-->
+    <ion-footer-bar align-title="center">
+      <div class="tabs tabs-icon-left" ui-sref="tab.home">
+        <a class="tab-item">
+          <i class="icon ion-home"></i>
+          Home
+        </a>
+        <a class="tab-item" menu-toggle="left">
+          <i class="icon ion-star"></i>
+          Favorites
+        </a>
+        <a class="tab-item" menu-toggle="right">
+          <i class="icon ion-gear-a"></i>
+          Settings
+        </a>
+      </div>
+    </ion-footer-bar>
+  </ion-side-menu-content>
+
+  <!-- 左侧菜单 -->
+  <ion-side-menu side="left">
+    <div class="list">
+
+      <a class="item item-icon-left" menu-close="true" ui-sref="tab.home">ActionSheet</a>
+
+      <a class="item item-icon-left" menu-close="true" ui-sref="tab.photo">Backdrop</a>
+
+      <a class="item item-icon-left" menu-close="true" href="#"></a>
+
+      <a class="item item-icon-left" menu-close="true" href="#"></a>
+    </div>
+  </ion-side-menu>
+
+  <!-- 右侧菜单 -->
+  <ion-side-menu side="right">
+    <div class="list">
+
+      <a class="item item-icon-left" menu-close="true" ui-sref="tab.home">首页</a>
+
+      <a class="item item-icon-left" menu-close="true" ui-sref="tab.photo">图片</a>
+
+      <a class="item item-icon-left" menu-close="true" href="#"></a>
+
+      <a class="item item-icon-left" menu-close="true" href="#"></a>
+    </div>
+  </ion-side-menu>
+</ion-side-menus>

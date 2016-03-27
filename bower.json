@@ -1,0 +1,6 @@
+{
+  "name": "HelloIonic",
+  "dependencies": {
+    "ionic": "^1.2.4"
+  }
+}
