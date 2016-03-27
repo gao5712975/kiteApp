@@ -2,4 +2,13 @@
   <button class="button button-light" ng-click="action()">
     button-light
   </button>
+  <ion-checkbox>Checkbox Label</ion-checkbox>
+
+  <ion-radio ng-model="choice" ng-value="'A'">Choose A</ion-radio>
+  <ion-radio ng-model="choice" ng-value="'B'">Choose B</ion-radio>
+  <ion-radio ng-model="choice" ng-value="'C'">Choose C</ion-radio>
+
+  <ion-toggle ng-model="airplaneMode" toggle-class="toggle-calm">Airplane Mode</ion-toggle>
+
+  <button on-hold="onHold()" class="button">Test</button>
 </div>

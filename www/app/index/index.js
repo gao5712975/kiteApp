@@ -27,6 +27,24 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         }
       }
     })
+    .state('tab.events', {
+      cache: false,
+      url: '/events',
+      views: {
+        '': {
+          templateUrl: 'static/template/views/events.html'
+        }
+      }
+    })
+    .state('tab.list', {
+      cache: false,
+      url: '/list',
+      views: {
+        '': {
+          templateUrl: 'static/template/views/list.html'
+        }
+      }
+    })
 });
 
 /*action sheet*/
@@ -84,5 +102,59 @@ app.controller('Backdrop',['$scope','$ionicBackdrop','$timeout',function ($scope
   $scope.$on('backdrop.shown', function() {
     console.info('backdrop.shown');
   });
+
+}]);
+
+app.controller('EventCtrl',['$scope',function ($scope) {
+  $scope.onHold = function () {
+    console.info("hold")
+  };
+  $scope.onTap = function () {
+    console.info("top")
+  };
+  $scope.onDoubleTap = function () {
+    console.info('doubleTap');
+  };
+  $scope.onTouch = function () {
+    console.info('onTouch');
+  };
+  $scope.onRelease = function () {
+    console.info('onRelease');
+  };
+  $scope.onDrag = function () {
+    console.info('onDrag');
+  };
+  $scope.onDragUp = function () {
+    console.info('onDragUp');
+  };
+  $scope.onDragRight = function () {
+    console.info('onDragRight');
+  };
+  $scope.onDragLeft = function () {
+    console.info('onDragLeft');
+  };
+  $scope.onDragDown = function () {
+    console.info('onDragDown');
+  };
+  $scope.onSwipe = function () {
+    console.info('onSwipe');
+  }
+}]);
+
+app.controller('ListCtrl',['$scope','$ionicListDelegate',function ($scope,$ionicListDelegate) {
+  $scope.items = [0,1];
+  $scope.moveItem = function(item, fromIndex, toIndex) {
+    $scope.items.splice(fromIndex, 1);
+    $scope.items.splice(toIndex, 0, item);
+  };
+
+  $scope.showDeleteButtons = function(bo) {
+    $scope.delButton = bo;
+    $ionicListDelegate.showDelete(bo);
+  };
+
+  $scope.deleteItem = function (index) {
+    $scope.items.splice(index, 1);
+  }
 
 }]);
